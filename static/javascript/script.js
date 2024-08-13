@@ -10,3 +10,18 @@ function getComputerChoice(){
             return "scissors";
     }
 }
+
+function getHumanChoice(){
+    let humanChoice = prompt("Enter your choice (Rock, Paper, Scissors): ").toLowerCase().trim();
+
+    switch (humanChoice){
+        case "rock":
+            return "rock";
+        case "paper":
+            return "paper";
+        case "scissors":
+            return "scissors";
+        default:
+            return null;
+    }
+}
