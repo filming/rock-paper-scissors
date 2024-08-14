@@ -26,7 +26,7 @@ function getHumanChoice(){
                 validInput = true;
                 break;
             default:
-                alert("Invalid option! Choose again!");
+                alert("Invalid option, please choose again!");
                 continue;
         }
     }
