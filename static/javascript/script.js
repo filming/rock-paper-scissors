@@ -12,18 +12,26 @@ function getComputerChoice(){
 }
 
 function getHumanChoice(){
-    let humanChoice = prompt("Enter your choice (Rock, Paper, Scissors): ").toLowerCase().trim();
+    let humanChoice = "";
+    let validInput = false;
 
-    switch (humanChoice){
-        case "rock":
-            return "rock";
-        case "paper":
-            return "paper";
-        case "scissors":
-            return "scissors";
-        default:
-            return "";
+    while (!validInput){
+        let userInput = prompt("Choose an option (Rock, Paper, Scissors): ").toLowerCase().trim();
+
+        switch (userInput){
+            case "rock":
+            case "paper":
+            case "scissors":
+                humanChoice = userInput;
+                validInput = true;
+                break;
+            default:
+                alert("Invalid option! Choose again!");
+                continue;
+        }
     }
+
+    return humanChoice;
 }
 
 
