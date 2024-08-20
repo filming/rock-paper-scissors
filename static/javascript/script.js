@@ -138,15 +138,18 @@ function playGame(){
         switch (roundWinner){
             case "draw":
                 roundResultLabel.textContent = `This round ends in a draw! You both chose ${computerChoice}.`;
+                roundResultLabel.style.color = "#d0a42f"; // gold
                 break;
 
             case "human":
                 roundResultLabel.textContent = `You win this round! The computer chose ${computerChoice}.`;
+                roundResultLabel.style.color = "#44bb49"; // green
                 humanScore++;
                 break;
                 
             case "computer":
                 roundResultLabel.textContent = `You lose this round! The computer chose ${computerChoice}.`;
+                roundResultLabel.style.color = "#ff0500"; // red
                 computerScore++;
                 break;
         }
@@ -160,11 +163,13 @@ function playGame(){
         switch (gameStatus){
             case "human":
                 gameResultLabel.textContent = "You have reached 5 points, you win the game!";
+                gameResultLabel.style.color = "#44bb49"; // green
                 gameOver();
                 break;
 
             case "computer":
                 gameResultLabel.textContent = "The computer has reached 5 points, you lose the game!";
+                gameResultLabel.style.color = "#ff0500"; // red
                 gameOver();
                 break;
         }
