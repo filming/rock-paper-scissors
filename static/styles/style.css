@@ -68,3 +68,26 @@ body > div {
 .options__content img:hover {
     cursor: pointer;
 }
+
+.restart {
+    display: flex;
+    justify-content: center;
+}
+
+.restart__content {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.restart__content button {
+    border-radius: 16px;
+    padding: 16px 48px;
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.restart__content button:hover {
+    cursor: pointer;
+    background-color: #e0e1dd74;
+}
