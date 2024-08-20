@@ -30,6 +30,8 @@ document.addEventListener("DOMContentLoaded", event => {
                 }
             }
         });
+
+        playerOptions[i].disabled = false;
     }
 });
 
@@ -93,24 +95,29 @@ function getGameStatus(humanScore, computerScore){
     return gameStatus;
 }
 
-function gameOver(){
-    function disablePlayerOptions(){
-        const playerOptions = document.querySelector(".options").querySelectorAll("img");
-    
-        for (let i = 0; i < playerOptions.length; i++){
+function togglePlayerOptions(){
+    const playerOptions = document.querySelector(".options").querySelectorAll("img");
+
+    for (let i = 0; i < playerOptions.length; i++){
+        if (playerOptions[i].disabled === false){
             playerOptions[i].disabled = true;
             playerOptions[i].style.opacity = "33%";
-            playerOptions[i].style.width = "250px";
-
         }
+        else if (playerOptions[i].disabled === true) {
+            playerOptions[i].disabled = false;
+            playerOptions[i].style.opacity = "100%";
+        }
+        playerOptions[i].style.width = "250px";
     }
+}
 
-    function showRestartButton(){
-        const restartBtn = document.querySelector(".restart__content button");
-        restartBtn.hidden = false;
-    }
+function showRestartButton(){
+    const restartBtn = document.querySelector(".restart__content button");
+    restartBtn.hidden = false;
+}
 
-    disablePlayerOptions();
+function gameOver(){
+    togglePlayerOptions();
     showRestartButton();
 }
 
@@ -175,6 +182,21 @@ function playGame(){
             }
         });
     }
+
+    // set the game back to initial state
+    const restartBtn = document.querySelector(".restart__content button");
+    restartBtn.addEventListener("click", clickEvent => {
+        togglePlayerOptions();
+        restartBtn.hidden = true;
+
+        humanScore = 0;
+        computerScore = 0;
+
+        humanScoreLabel.textContent = "0";
+        computerScoreLabel.textContent = "0";
+        roundResultLabel.textContent = "";
+        gameResultLabel.textContent = "";
+    });
 }
 
 playGame();
