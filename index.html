@@ -3,20 +3,50 @@
     <head>
         <meta charset="utf-8">
         <title>Rock Paper Scissors</title>
+        <link href="./static/styles/style.css" rel="stylesheet">
     </head>
     <body>
-        <div class="scores">
-            <p class="scores__human">Human Score: 0</p>
-            <p class="scores__computer">Computer Score: 0</p>
+        <div class="hero">
+            <div class="hero__content">
+                <h1>ROCK, PAPER, SCISSORS!</h1>
+                <h2>First to FIVE points wins!</h2>
+            </div>
         </div>
-        <div class="player-options">
-            <button class="player-options__rock-btn">Rock</button>
-            <button class="player-options__paper-btn">Paper</button>
-            <button class="player-options__scissors-btn">Scissors</button>
+        <div class="scores">
+            <div class="scores__content">
+                <div class="scores__human">
+                    <p class="scores__title">Your Score</p>
+                    <p class="scores__score">0</p>
+                </div>
+                <div class="scores__computer">
+                    <p class="scores__title">Computer Score</p>
+                    <p class="scores__score">0</p>
+                </div>
+            </div>
         </div>
         <div class="results">
-            <p class="results__round"></p>
-            <p class="results__game"></p>
+            <div class="results__content">
+                <p class="results__round"></p>
+                <p class="results__game"></p>
+            </div>
+        </div>
+        <div class="options">
+            <div class="options__content">
+                <div class="options__rock">
+                    <img id="rock" src="./static/assets/rock.png" alt="A cartoon picture of a hand showing the rock sign.">
+                </div>
+                <div class="options__paper">
+                    <img id="paper" src="./static/assets/paper.png" alt="A cartoon picture of a hand showing the paper sign.">
+                </div>
+                <div class="options__scissors">
+                    <img id="scissors" src="./static/assets/scissors.png" alt="A cartoon picture of a hand showing the scissors sign.">
+                </div>
+            </div>
+        </div>
+        <div class="restart">
+            <div class="restart__content">
+                <button>Play Again</button>
+            </div>
         </div>
         <script src="./static/javascript/script.js" type="text/javascript"></script>
     </body>
