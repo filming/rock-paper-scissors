@@ -105,7 +105,13 @@ function gameOver(){
         }
     }
 
+    function showRestartButton(){
+        const restartBtn = document.querySelector(".restart__content button");
+        restartBtn.hidden = false;
+    }
+
     disablePlayerOptions();
+    showRestartButton();
 }
 
 function playGame(){
